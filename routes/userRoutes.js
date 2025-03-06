@@ -7,6 +7,7 @@ import {
   toggleFavorite,
   getUserFavorites,
   getArtistProfile,
+  getAllArtists
 } from "../controllers/userController.js";
 import authMiddleware from "../middleware/authMiddleware.js";
 import upload from "../config/multerConfig.js";
@@ -38,6 +39,9 @@ userRouter.get("/favorites", authMiddleware, getUserFavorites);
 
 // Route for getting artist profile
 userRouter.get("/artist/:id", getArtistProfile);
+
+//Route for getting all artists
+userRouter.get("/artists", getAllArtists);
 
 // Route for requesting account deletion
 // userRouter.post('/request-delete', authMiddleware, requestAccountDeletion);

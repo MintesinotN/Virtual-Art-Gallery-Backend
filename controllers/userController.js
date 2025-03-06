@@ -202,6 +202,17 @@ export const getArtistProfile = async (req, res) => {
   }
 };
 
+export const getAllArtists = async (req, res) => {
+  try {
+    const artists = await userModel
+      .find({ role: "artist" })
+      .select("-password"); // Exclude password field
+    res.status(200).json(artists);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching artists", error });
+  }
+};
+
 // Account deletion request controller
 // export const requestAccountDeletion = async (req, res) => {
 //   try {
