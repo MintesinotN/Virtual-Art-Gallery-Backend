@@ -75,20 +75,20 @@ export const deleteArtwork = async (req, res) => {
   }
 };
 
-// export const getArtworkById = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const artwork = await artworkModel.findById(id).populate('artist', 'name');
+export const getArtworkById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const artwork = await artworkModel.findById(id).populate("artist", "name");
 
-//     if (!artwork) {
-//       return res.status(404).json({ message: "Artwork not found" });
-//     }
+    if (!artwork) {
+      return res.status(404).json({ message: "Artwork not found" });
+    }
 
-//     res.status(200).json(artwork);
-//   } catch (error) {
-//     res.status(500).json({ message: "Error fetching artwork", error });
-//   }
-// };
+    res.status(200).json(artwork);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching artwork", error });
+  }
+};
 
 export const updateArtwork = async (req, res) => {
   try {

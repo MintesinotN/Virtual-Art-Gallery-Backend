@@ -3,6 +3,7 @@ import upload from "../config/multerConfig.js";
 import {
   uploadArtwork,
   getArtworks,
+  getArtworkById,
   deleteArtwork,
   updateArtwork,
   rateArtwork,
@@ -21,7 +22,7 @@ artworkRouter.post(
   uploadArtwork
 ); // Create artwork
 artworkRouter.get("/", getArtworks); // Get all artworks
-// artworkRouter.get('/:id', getArtworkById);  // Get artwork by ID
+artworkRouter.get("/:id", getArtworkById); // Get artwork by ID
 artworkRouter.put(
   "/:id",
   authMiddleware,
