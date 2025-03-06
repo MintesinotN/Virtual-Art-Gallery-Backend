@@ -3,3 +3,26 @@
 
 # Dependencies
 node_modules/
+
+# Node modules
+/node_modules
+/.pnp
+.pnp.js
+
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+out/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor-specific
+.idea/
+.vscode/
